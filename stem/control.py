@@ -2532,7 +2532,7 @@ class Controller(BaseController):
     for param, value in params:
       if isinstance(value, str):
         query_comp.append('%s="%s"' % (param, value.strip()))
-      elif isinstance(value, collections.Iterable):
+      elif isinstance(value, collections.abc.Iterable):
         query_comp.extend(['%s="%s"' % (param, val.strip()) for val in value])
       elif not value:
         query_comp.append(param)
